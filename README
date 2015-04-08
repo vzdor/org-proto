@@ -1,0 +1,14 @@
+https://www.google.com/search?q=org-protocol.el&ie=utf-8&oe=utf-8
+
+Register org-protocol:// handler:
+sh install.sh
+
+Minimal .emacs:
+
+(require 'org-capture)
+(require 'org-protocol)
+;; http://orgmode.org/manual/Template-elements.html
+(setq org-capture-templates
+      '(("l" "Link" entry
+         (file+headline "~/org/web.org" "Web")
+         "* %c %u\n\n %i" :prepend t)))
